@@ -1,0 +1,1 @@
+Aca se colocan todos los archivos que generan la vista de la pagina 

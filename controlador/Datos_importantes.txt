@@ -1,0 +1,1 @@
+Aca se crean las funciones que van a manejar el sistema
