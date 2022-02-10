@@ -6,13 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio</title>
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" crossorigin="crossorigin" as="font">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+
+
+
 </head>
 
 <body>
+    <header class="header">
+        <?php
+            require_once("partials/navegacion.php");
+        ?>
+    </header>
 
-<h1>Probando css</h1>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et doloribus laboriosam autem provident porro possimus ab in voluptatem, enim consectetur velit perspiciatis aspernatur nesciunt incidunt fugiat, odio a iure? Temporibus.</p>
+    <div class="contenedor contenido-principal">
+
+
+    </div>
+
     <script src="js/master.js"></script>
 </body>
 
