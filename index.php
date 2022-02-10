@@ -20,7 +20,7 @@
 <body>
     <header class="header">
         <?php
-            require_once("partials/navegacion.php");
+        require_once("partials/navegacion.php");
         ?>
     </header>
 
@@ -30,7 +30,13 @@
     </div>
     <h3>prueba</h3>
 
-    <script src="js/master.js"></script>
+    <footer class="footer">
+        <?php
+        require_once("partials/footer.php");
+        ?>
+    </footer>
+
+    <script src="js/modernizr.js"></script>
 </body>
 
 </html>

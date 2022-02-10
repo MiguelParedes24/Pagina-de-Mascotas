@@ -20,9 +20,19 @@
         ?>
     </header>
 
+    <div class="contenedor contenido-principal">
 
 
-    <script src="js/master.js"></script>
+    </div>
+   
+
+    <footer class="footer">
+        <?php
+        require_once("partials/footer.php");
+        ?>
+    </footer>
+
+    <script src="js/modernizr.js"></script>
 </body>
 
 </html>

@@ -12,7 +12,7 @@
 html {
     box-sizing: border-box;
     font-size: 62.5%;
-    
+
 }
 
 *,
@@ -85,25 +85,26 @@ img {
 }
 
 /** Header **/
-.webp .header {
-    background-image: url(../imagenes/grupo_perros.jpg);
+/* .webp .header {
+    background-image: url(../imagenes/portada.jpg);
 }
 
 .no-webp .header {
-    background-image: url(../imagenes/grupo_perros.jpg);
-}
+    background-image: url(../imagenes/portada.jpg);
+} */
 
 .header {
     height: 60rem;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    background-image: url(../imagenes/portada.jpg);
 
 }
 
 .header__texto {
     text-align: center;
-    color: var(black);
+    color: var(--blanco);
     margin-top: 5rem;
 }
 
@@ -127,7 +128,7 @@ img {
 }
 
 .logo {
-    color: var(black);
+    color: var(--blanco);
 }
 
 .logo__nombre {
@@ -150,7 +151,7 @@ img {
     display: block;
     text-align: center;
     font-size: 1.8rem;
-    color: var(black);
+    color: var(--blanco);
 
 }
 
@@ -183,4 +184,32 @@ img {
     font-weight: 700;
     margin-bottom: 2rem;
     border: none;
+}
+
+@media (min-width: 768px) {
+    .boton {
+        display: inline-block;
+    }
+}
+
+.boton:hover {
+    cursor: pointer;
+}
+
+.boton--primario {
+    background-color: var(--negro);
+}
+
+.boton--secundario {
+    background-color: var(--primario);
+}
+
+
+
+
+
+.footer {
+    background-color: rgb(82, 122, 253);
+    padding-bottom: 3rem;
+    margin-top: 4rem;
 }
