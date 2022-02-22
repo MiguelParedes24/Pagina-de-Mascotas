@@ -4,15 +4,15 @@
             <h1 class="logo__nombre no-margin centrar-texto"><span class="logo__bold">La Cuchita</span></h1>
         </a>
         <nav class="navegacion">
-            <a class="navegacion__enlace" href="../index.php">La cuchita</a>
+            <a class="navegacion__enlace" href="index.php">La Cuchita</a>
 
-            <a class="navegacion__enlace" href="../vista/nosotros.php">Nosotros</a>
+            <a class="navegacion__enlace" href="nosotros.php">Nosotros</a>
 
-            <a class="navegacion__enlace" href="../vista/mascotas.php">Mascotas</a>
+            <a class="navegacion__enlace" href="mascotas.php">Mascotas</a>
 
-            <a class="navegacion__enlace" href="../vista/ayuda.php">¿Necesita Ayuda?</a>
+            <a class="navegacion__enlace" href="ayuda.php">¿Necesita Ayuda?</a>
 
-            <a class="navegacion__enlace" href="../vista/contacto.php">Contacto</a>
+            <a class="navegacion__enlace" href="contacto.php">Contacto</a>
         </nav>
     </div>
 </div>
