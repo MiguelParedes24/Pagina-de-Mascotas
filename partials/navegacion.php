@@ -13,6 +13,8 @@
             <a class="navegacion__enlace" href="ayuda.php">¿Necesita Ayuda?</a>
 
             <a class="navegacion__enlace" href="contacto.php">Contacto</a>
+
+            <a class="navegacion__enlace" href="login.php">Inicia Sesión</a>
         </nav>
     </div>
 </div>

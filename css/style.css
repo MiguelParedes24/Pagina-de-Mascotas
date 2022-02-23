@@ -2,7 +2,6 @@
     --fuenteHeading: 'PT Sans', sans-serif;
     --fuenteParrafos: 'Open Sans', sans-serif;
 
-    --primario: #784D3C;
     --gris: #e1e1e1;
     --blanco: #FFFFFF;
     --negro: #000000;
@@ -25,6 +24,7 @@ body {
     font-family: var(--fuenteParrafos);
     font-size: 1.8rem;
     line-height: 2;
+
 }
 
 /** Globales **/
@@ -102,6 +102,7 @@ img {
 
 }
 
+
 .header__texto {
     text-align: center;
     color: var(--blanco);
@@ -176,14 +177,14 @@ img {
 .boton {
     display: block;
     font-family: var(--fuenteHeading);
-    color: var(black);
+    color: var(--blanco);
     text-align: center;
     padding: 1rem 3rem;
     font-size: 1.8rem;
     text-transform: uppercase;
     font-weight: 700;
     margin-bottom: 2rem;
-    border: none;
+    border-radius: 0.5rem;
 }
 
 @media (min-width: 768px) {
@@ -194,26 +195,38 @@ img {
 
 .boton:hover {
     cursor: pointer;
+    background-color: rgb(7, 63, 248);
+
 }
 
 .boton--primario {
-    background-color: var(--negro);
+    background-color: rgb(82, 122, 253);
+
 }
 
 .boton--secundario {
-    background-color: var(--primario);
+    background-color: rgb(82, 122, 253);
 }
 
-.cursos {
+.animalitos {
     list-style: none;
+    height: auto;
 }
 
-.widget-curso {
+.sidebar {
+    height: 150rem;
+
+    overflow-y: scroll;
+
+}
+
+.widget-animalito {
     border-bottom: 1px solid var(--gris);
     margin-bottom: 2rem;
+    padding: 4px;
 }
 
-.widget-curso:last-of-type {
+.widget-animalito:last-of-type {
     border: none;
     margin-bottom: 0;
 
@@ -287,15 +300,65 @@ img {
 
 /** Pagina de Ayuda**/
 
-.formulario {
-    background-color: var(--blanco);
-    width: 95%;
+
+.campo__field--textarea {
+    width: 100%;
+    border: 2px solid var(--gris);
+    border-radius: 0.5rem;
 }
 
-.campo {}
+/** Detalle Animalito **/
 
-.campo__label {}
+.fila {
+    border: 2px solid var(--gris);
+    border-radius: 0.5rem;
+    text-align: center;
+    padding: 0.5rem;
+}
 
-.campo__field {}
+.img-animalito {
+    width: 50%;
+    margin: auto;
+}
 
-.campo__field--textarea {}
+/** Login **/
+
+.form-login {
+    width: 50%;
+    margin-top: 2rem;
+    margin-left: 25%;
+    border: 2px solid var(--gris);
+    border-radius: 0.5rem;
+    padding: 5rem;
+}
+
+.label-form {
+    font-family: var(--fuenteHeading);
+    font-weight: 500;
+}
+
+
+.input-form {
+    border: 2px solid var(--gris);
+    border-radius: 0.5rem;
+    width: 100%;
+}
+
+.boton-formu {
+    padding: 0.5rem 2rem;
+    margin: 15px 0 0 160px;
+}
+
+.boton:hover {
+    background-color: rgb(7, 63, 248);
+}
+
+.enlace-login {
+    padding-top: 20px;
+    text-align: center;
+
+}
+
+.enlace-login:hover {
+    text-decoration: underline;
+}

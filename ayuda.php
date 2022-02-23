@@ -9,8 +9,11 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" crossorigin="crossorigin" as="font">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap"
+        crossorigin="crossorigin" as="font">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -20,24 +23,23 @@
         ?>
     </header>
 
-    <div class="contenedor contenido-principal">
-        <h3>¿Necesitas Ayuda? Completa el siguiente formulario</h3>
-        <hr>
-        <form action="Post" class="formulario">
-            <fieldset>
-                <label for="nombre">Nombre de la Mascota</label>
+    <div class="contenedor">
+        <h3 style="text-align:center">¿Necesitas Ayuda? Completa el siguiente formulario</h3>
+      
+        <form action="Post" class="form-login">
+            <label class="label-form" for="nombre">Nombre de la Mascota</label><br>
 
-                <input type="text" name="nombre" id="nombre">
+            <input class="input-form" type="text" name="nombre" id="nombre"><br>
 
-                <label for="descripcion">Descripcion</label>
+            <label class="label-form" for="descripcion">Descripcion</label><br>
 
-                <textarea class="campo__field--textarea" name="descripcion" id="descripcion" cols="30" rows="10"></textarea>
+            <textarea class="campo__field--textarea" name="descripcion" id="descripcion" cols="50"
+                rows="10"></textarea><br>
 
-                <label for="contacto">Telefono para contactar</label>
-                <input type="number" name="telefono" id="contacto">
+            <label for="contacto">Telefono de Contacto</label>
+            <input   type="text" name="telefono" id="contacto">
 
-                <input class="boton" type="button" value="Enviar">
-            </fieldset>
+            <button type="submit" class="boton boton--primario boton-formu">Enviar</button>
         </form>
 
     </div>
