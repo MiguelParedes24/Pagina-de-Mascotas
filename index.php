@@ -99,5 +99,5 @@ $noticias = listar($bd, 'animalitos');
 
     <script src="js/modernizr.js"></script>
 </body>
-
+<!-- AAAAAAAAAAAAAAAAAAAAAAAAAAA -->
 </html>
