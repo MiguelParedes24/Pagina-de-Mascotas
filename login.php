@@ -27,7 +27,7 @@ if ($_POST) {
                 //Guardar los datos del usuario en variables de sesion
                 seteoUsuario($usuario, $_POST);
                 //Envio al usuario a donde yo desee
-                header("location: perfil.php");
+                header("location: index.php");
             }
         }
     }
