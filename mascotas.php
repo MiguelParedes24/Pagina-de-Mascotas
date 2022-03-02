@@ -1,3 +1,18 @@
+<?php
+//require_once('helpers/dd.php');
+require('controlador/funciones.php');
+//if(ingresarUsuario() === true){
+if (!isset($_SESSION['nombre'])) {
+    $nombre = "";
+} else {
+    $nombre = $_SESSION['nombre'] . ' ' . $_SESSION['apellido'];
+}
+
+$bd = conexion('localhost', 'mascotas', 'root', '');
+$animalitos = listar($bd, 'animalitos');
+$noticias = listar($bd, 'animalitos');
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,8 +38,9 @@
     <div class="contenedor contenido-principal">
 
 
+
     </div>
-   
+
 
     <footer class="footer">
         <?php

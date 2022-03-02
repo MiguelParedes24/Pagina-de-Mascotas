@@ -77,7 +77,7 @@ $noticias = listar($bd, 'animalitos');
 
                     <article class="animalitos">
                         <div class="widget-animalito">
-                            <img src="imagenes/<?= $animalito['imagen'] ?>" class="card-img-top w-100 " alt="...">
+                            <img src="imagenes/<?= $animalito['imagen'] ?>" alt="...">
                             <div>
                                 <h5 class="no-margin"><?= $animalito['nombre'] ?></h5>
                                 <p class="no-margin"><?= $animalito['descripcion'] ?></p>
@@ -99,5 +99,5 @@ $noticias = listar($bd, 'animalitos');
 
     <script src="js/modernizr.js"></script>
 </body>
-<!-- AAAAAAAAAAAAAAAAAAAAAAAAAAA -->
+
 </html>

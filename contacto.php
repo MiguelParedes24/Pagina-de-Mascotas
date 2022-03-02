@@ -1,3 +1,14 @@
+<?php
+//require_once('helpers/dd.php');
+require('controlador/funciones.php');
+//if(ingresarUsuario() === true){
+if (!isset($_SESSION['nombre'])) {
+    $nombre = "";
+} else {
+    $nombre = $_SESSION['nombre'] . ' ' . $_SESSION['apellido'];
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,11 +31,29 @@
         ?>
     </header>
 
-    <div class="contenedor contenido-principal">
+    <main class="contenedor">
+        <h3 class="centrar-texto">Contacto</h3>
+        <div class="contacto-bg"></div>
+        <form action="Post" class="form-login">
+            <div class="campo">
+                <label class="label-form" for="nombre">Nombre</label>
+                <input class="input-form" type="text" placeholder="Tu Nombre" id="nombre">
+            </div>
+            <div class="campo">
+                <label class="label-form" for="email">E-mail</label>
+                <input class="input-form" type="email" placeholder="Tu E-mail" id="email">
+            </div>
+            <div class="campo">
+                <label class="label-form" for="mensaje">Mensaje</label>
+                <textarea class="campo__field--textarea" id="mensaje"></textarea>
+            </div>
 
+            <div class="campo">
+                <input type="submit" value="Enviar" class="boton boton--primario boton-formu">
+            </div>
+        </form>
+    </main>
 
-    </div>
-    
 
     <footer class="footer">
         <?php

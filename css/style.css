@@ -84,15 +84,6 @@ img {
     text-align: center;
 }
 
-/** Header **/
-/* .webp .header {
-    background-image: url(../imagenes/portada.jpg);
-}
-
-.no-webp .header {
-    background-image: url(../imagenes/portada.jpg);
-} */
-
 .header {
     height: 60rem;
     background-size: cover;
@@ -154,6 +145,12 @@ img {
     font-size: 1.8rem;
     color: var(--blanco);
 
+}
+
+.navegacion__enlace:hover {
+    color: var(--blanco);
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 @media (min-width: 768px) {

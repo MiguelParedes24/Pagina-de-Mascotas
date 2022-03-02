@@ -5,13 +5,12 @@
         </a>
         <nav class="navegacion">
             <a class="navegacion__enlace" href="index.php">La Cuchita</a>
-            <?php if(isset($_SESSION['nombre'])) : ?>
-                <?php if(intval($_SESSION['perfil'])===0) : ?>
+            <?php if (isset($_SESSION['nombre'])) : ?>
+                <a class="navegacion__enlace" href="perfil.php">Perfil</a>
+                <?php if (intval($_SESSION['perfil']) === 0) : ?>
                     <a class="navegacion__enlace" href="administrar.php">Administrar</a>
-
-
-                    <?php endif; ?>
                 <?php endif; ?>
+            <?php endif; ?>
             <a class="navegacion__enlace" href="nosotros.php">Nosotros</a>
 
             <a class="navegacion__enlace" href="mascotas.php">Mascotas</a>
@@ -20,16 +19,16 @@
 
             <a class="navegacion__enlace" href="contacto.php">Contacto</a>
 
-           
-           
-
-                <?php if(isset($_SESSION['nombre'])) : ?>
 
 
-                    <a class="navegacion__enlace" href="cerrarSesion.php">Cerrar Sesion </a>
-                <?php else : ?>
-                    <a class="navegacion__enlace" href="login.php">Inicia Sesión</a>
-                    <?php endif; ?>
+
+            <?php if (isset($_SESSION['nombre'])) : ?>
+
+
+                <a class="navegacion__enlace" href="cerrarSesion.php">Cerrar Sesion</a>
+            <?php else : ?>
+                <a class="navegacion__enlace" href="login.php">Inicia Sesión</a>
+            <?php endif; ?>
 
 
 
@@ -40,4 +39,3 @@
     <h2 class="no-margin">Espacio dedicado a los animalitos</h2>
     <p class="no-margin">Encuentrale un lugar para que sea feliz!</p>
 </div>
-

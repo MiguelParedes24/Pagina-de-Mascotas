@@ -1,3 +1,13 @@
+<?php
+//require_once('helpers/dd.php');
+require('controlador/funciones.php');
+//if(ingresarUsuario() === true){
+if (!isset($_SESSION['nombre'])) {
+    $nombre = "";
+} else {
+    $nombre = $_SESSION['nombre'] . ' ' . $_SESSION['apellido'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 

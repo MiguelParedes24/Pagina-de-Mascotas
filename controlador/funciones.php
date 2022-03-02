@@ -57,6 +57,7 @@ function armarUsuario($datos)
         "apellido" => $datos['apellido'],
         "email" => $datos['email'],
         "password" => $datos['password'],
+        "telefono" => $datos['telefono'],
         "perfil" => 1
     ];
     //dd($usuario);
@@ -101,6 +102,7 @@ function guardarUsuarioBD($bd, $tabla, $datos, $imagen)
     $apellido = $datos['apellido'];
     $email = $datos['email'];
     $password = password_hash($datos['password'], PASSWORD_DEFAULT);
+    $telefono = $datos['telefono'];
     $perfil = 1;
     $avatar = $imagen;
     //2.- Armar la consulta
@@ -113,6 +115,7 @@ function guardarUsuarioBD($bd, $tabla, $datos, $imagen)
     $query->bindValue(':apellido', $apellido);
     $query->bindValue(':email', $email);
     $query->bindValue(':password', $password);
+    $query->bindValue(':telefono', $telefono);
     $query->bindValue(':perfil', $perfil);
     $query->bindValue(':avatar', $avatar);
     //5.- Ejecutar la consulta
@@ -201,9 +204,11 @@ function buscar($bd, $tabla, $dato)
 //Función para setear el usuario (Session - Cookies)
 function seteoUsuario($usuario, $datos)
 {
-    //dd($datos);
+    $_SESSION['id'] = $usuario['id'];
     $_SESSION['nombre'] = $usuario['nombre'];
     $_SESSION['apellido'] = $usuario['apellido'];
+    $_SESSION['email'] = $usuario['email'];
+    $_SESSION['telefono'] = $usuario['telefono'];
     $_SESSION['perfil'] = $usuario['perfil'];
     $_SESSION['avatar'] = $usuario['avatar'];
     if (isset($datos['recordarme'])) {

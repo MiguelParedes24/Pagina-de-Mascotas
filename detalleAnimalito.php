@@ -1,5 +1,11 @@
 <?php
 require_once('controlador/funciones.php');
+if (!isset($_SESSION['nombre'])) {
+    $nombre = "";
+} else {
+    $nombre = $_SESSION['nombre'] . ' ' . $_SESSION['apellido'];
+}
+
 $id = intval($_GET['id']);
 
 $bd = conexion('localhost', 'mascotas', 'root', '');
@@ -15,11 +21,11 @@ $animalito = buscar($bd, 'animalitos', $id);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <title>Detalle Animalito</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 
-    <!-- <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" crossorigin="crossorigin" as="font"> -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" crossorigin="crossorigin" as="font">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
