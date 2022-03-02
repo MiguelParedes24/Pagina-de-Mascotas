@@ -8,6 +8,7 @@ if ($_POST) {
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
     $email = $_POST['email'];
+    $telefono = $_POST['telefono'];
     $errores = [];
     //Debo hacer una validación
     $errores = validarUsuarioRegistro($_POST, $_FILES);
@@ -52,6 +53,7 @@ if ($_POST) {
 
         <section>
             <h2 style="text-align: center">Registro de usuario</h2>
+            <h5 style="text-align: center">(Todos los campos son obligatorios y deben ser completados)</h5>
         </section>
         <section class="formulario">
             <?php if (isset($errores)) : ?>
@@ -65,33 +67,40 @@ if ($_POST) {
             <?php endif; ?>
 
             <form class="form-login" action="" method="POST" enctype="multipart/form-data">
+
+
+                <label for="nombre" class="label-form">Nombre</label>
+                <input type="text" class="input-form" id="nombre" name="nombre" value="<?= isset($_POST['nombre']) ? $_POST['nombre'] : ""; ?>" required placeholder="Ingresa aqui tu nombre" />
+
                 <div>
-                    <label for="nombre" class="label-form">Nombre</label>
-                    <input type="text" class="input-form" id="nombre" name="nombre" value="<?= isset($_POST['nombre']) ? $_POST['nombre'] : ""; ?>" />
-                    <!--<div><span class="text text-danger"><?= $errores['nombre']; ?></span></div>-->
-                    <div>
-                        <label for="apellido" class="label-form">Apellido</label>
-                        <input type="text" class="input-form" name="apellido" id="apellido" value="<?= isset($_POST['apellido']) ? $_POST['apellido'] : ""; ?>" />
-                    </div>
-                    <div>
-                        <label for="email" class="label-form">Correo electrónico</label>
-                        <input type="email" class="input-form" name="email" id="email" value="<?= isset($_POST['email']) ? $_POST['email'] : ""; ?>" />
-                    </div>
-                    <div>
-                        <label for="password" class="label-form">Clave</label>
-                        <input type="password" class="input-form" name="password" id="password">
-                    </div>
-                    <div>
-                        <label for="repassword" class="label-form">Rectifique la clave</label>
-                        <input type="password" class="input-form" name="repassword" id="repassword">
-                    </div>
-                    <div class="form-group">
-                        <input class="input-archivo" type="file" name="avatar">
-                    </div>
-                    <button type="submit" class="boton boton--primario boton-formu">Quiero Registrarme</button>
-                    <div class="boton-formu">
-                        <a class="enlace-login" href="login.php">Ya poseo una cuenta!</a>
-                    </div>
+                    <label for="apellido" class="label-form">Apellido</label>
+                    <input type="text" class="input-form" name="apellido" id="apellido" value="<?= isset($_POST['apellido']) ? $_POST['apellido'] : ""; ?>" required placeholder="Ingresa aqui tu apellido" />
+                </div>
+                <div>
+                    <label for="email" class="label-form">Correo electrónico</label>
+                    <input type="email" class="input-form" name="email" id="email" value="<?= isset($_POST['email']) ? $_POST['email'] : ""; ?>" required placeholder="Ingresa aqui tu email" />
+                </div>
+
+                <div>
+                    <label for="telefono" class="label-form">Telefono</label>
+                    <input type="text" class="input-form" name="telefono" id="telefono" value="<?= isset($_POST['telefono']) ? $_POST['telefono'] : ""; ?>" required placeholder="Ej: el número no debe contener ni el 0 del 0297 ni el 15" />
+                </div>
+
+                <div>
+                    <label for="password" class="label-form">Clave</label>
+                    <input type="password" class="input-form" name="password" id="password" required placeholder="La contraseña debe tener 6 o más caracteres">
+                </div>
+                <div>
+                    <label for="repassword" class="label-form">Rectifique la clave</label>
+                    <input type="password" class="input-form" name="repassword" id="repassword" required placeholder="Ingresa de nuevo tu contraseña">
+                </div>
+                <div class="form-group">
+                    <input class="input-archivo" type="file" name="avatar">
+                </div>
+                <input type="submit" class="boton boton--primario boton-formu" value="Quiero Registrarme">
+                <div class="boton-formu">
+                    <a class="enlace-login" href="login.php">Ya poseo una cuenta!</a>
+                </div>
             </form>
         </section>
 

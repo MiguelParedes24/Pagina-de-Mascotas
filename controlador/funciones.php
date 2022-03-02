@@ -20,6 +20,9 @@ function validarUsuarioRegistro($datos, $imagen)
         $errores['password']  = "El campo clave no puede tener menos de 6 caracteres";
     }
 
+    if (strlen(trim($datos['telefono'])) != 10) {
+        $errores['telefono'] = "El campo de telefono debe tener exactamente 10 caracteres";
+    }
 
     if (trim($datos['repassword']) === '') {
         $errores['repassword']  = "El campo de rectificación no puede estar vacio";
@@ -33,11 +36,11 @@ function validarUsuarioRegistro($datos, $imagen)
     }
     //Validar la imagen - Avatar
     if (isset($imagen)) {
-        //dd($imagen);
+        
         $avatar = $imagen['avatar']['name'];
-        //dd($avatar);
+        
         $ext = pathinfo($avatar, PATHINFO_EXTENSION);
-        //dd($ext);
+        
         if ($imagen['avatar']['error'] != 0) {
             $errores['avatar'] = "Debe subir su avatar";
         } elseif ($ext != 'jpg' && $ext != 'jpeg' && $ext != 'png') {
@@ -51,7 +54,6 @@ function validarUsuarioRegistro($datos, $imagen)
 //Función que arma el registro del usuario
 function armarUsuario($datos)
 {
-    //dd($datos);
     $usuario = [
         "nombre" => $datos['nombre'],
         "apellido" => $datos['apellido'],
@@ -66,17 +68,16 @@ function armarUsuario($datos)
 //Armar imagen
 function armarImagen($imagen)
 {
-    //dd($imagen);
     $avatar = $imagen['avatar']['name'];
     $ext = pathinfo($avatar, PATHINFO_EXTENSION);
     $archivoOrigen = $imagen['avatar']['tmp_name'];
     $archivoDestino = dirname(__DIR__) . '/imagenes/';
     $avatar = uniqid('avatar-') . '.' . $ext;
-    //dd($avatar);
+    
     $archivoDestino = $archivoDestino . $avatar;
     //Voy a guardar en el servidor la imagen o el archivo
     move_uploaded_file($archivoOrigen, $archivoDestino);
-    //dd($avatar);
+    
     return $avatar;
 }
 
@@ -107,7 +108,36 @@ function guardarUsuarioBD($bd, $tabla, $datos, $imagen)
     $avatar = $imagen;
     //2.- Armar la consulta
     //                            Nombres de los campos en la tabla
-    $sql = "insert into $tabla (nombre,apellido,email,password,perfil,avatar) values (:nombre,:apellido,:email,:password,:perfil,:avatar)";
+    $sql = "insert into $tabla (nombre,apellido,email,telefono,password,perfil,avatar) values (:nombre,:apellido,:email,:telefono,:password,:perfil,:avatar)";
+    //3.- Preparar la consulta
+    $query = $bd->prepare($sql);
+    //4.- Continuo con la preparación de la consulta de manera blindada
+    $query->bindValue(':nombre', $nombre);
+    $query->bindValue(':apellido', $apellido);
+    $query->bindValue(':email', $email);
+    $query->bindValue(':password', $password);
+    $query->bindValue(':telefono', $telefono);
+    $query->bindValue(':perfil', $perfil);
+    $query->bindValue(':avatar', $avatar);
+    //5.- Ejecutar la consulta
+    $query->execute();
+}
+
+//Funcion para Actualizar (NO FUNCIONA)
+function actualizarUsuarioBD($bd, $tabla, $datos, $imagen)
+{
+    //1.- Organizar los datos a guardar
+    $nombre = $datos['nombre'];
+    $apellido = $datos['apellido'];
+    $email = $datos['email'];
+    $password = password_hash($datos['password'], PASSWORD_DEFAULT);
+    $telefono = $datos['telefono'];
+    $perfil = 1;
+    $avatar = $imagen;
+    //2.- Armar la consulta
+    //Nombres de los campos en la tabla"
+    $sql = "UPDATE $tabla SET nombre=".$nombre .", apellido=".$apellido.", email=".$email.",telefono=".$telefono.", password=".$password.",perfil=".$perfil.",avatar=".$avatar."'WHERE id =".$_REQUEST['id'];
+    //$sql = "UPDATE $tabla SET(nombre,apellido,email,telefono,password,perfil,avatar) values (:nombre,:apellido,:email,:telefono,:password,:perfil,:avatar)";
     //3.- Preparar la consulta
     $query = $bd->prepare($sql);
     //4.- Continuo con la preparación de la consulta de manera blindada
