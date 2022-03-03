@@ -153,6 +153,15 @@ img {
     cursor: pointer;
 }
 
+.enlaceAyuda {
+    color: blue;
+}
+
+.enlaceAyuda:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 @media (min-width: 768px) {
     .contenido-principal {
         display: grid;
@@ -223,25 +232,12 @@ img {
     padding: 4px;
 }
 
+
+
 .widget-animalito:last-of-type {
     border: none;
     margin-bottom: 0;
 
-}
-
-.widget-curso__label,
-.curso__label {
-    font-family: var(--fuenteHeading);
-    font-weight: bold;
-}
-
-.widget-curso__info {
-    font-weight: normal;
-}
-
-.widget-curso__label,
-.widget-curso__info {
-    font-size: 2rem;
 }
 
 .footer {
@@ -259,40 +255,6 @@ img {
         column-gap: 2rem;
     }
 
-}
-
-/** Cursos **/
-.curso {
-    padding: 3rem;
-    border-bottom: 1px solid var(--gris);
-}
-
-@media(min-width: 768px) {
-    .curso {
-        display: grid;
-        grid-template-columns: 33.3% 66.7%;
-        column-gap: 2rem;
-
-    }
-
-}
-
-.curso:last-of-type {
-    border: none;
-}
-
-.curso__label {
-    font-family: var(--fuenteHeading);
-    font-weight: bold;
-}
-
-.curso__info {
-    font-weight: normal;
-}
-
-.curso__label,
-.curso__info {
-    font-size: 2rem;
 }
 
 /** Pagina de Ayuda**/
@@ -358,4 +320,45 @@ img {
 
 .enlace-login:hover {
     text-decoration: underline;
+}
+
+/**Mascota**/
+
+.secMascotaE {
+    margin: 2rem;
+    width: 100%;
+    border: 3px solid green;
+    border-radius: 0.5rem;
+}
+
+.secMascotaP {
+    margin: 2rem;
+    width: 100%;
+    border: 3px solid red;
+    border-radius: 0.5rem;
+}
+
+.widget-mascota {
+    border: 2px solid var(--gris);
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+    padding: 4px;
+}
+
+/**Administrar**/
+
+.tablaAdministrar {
+    text-align: center;
+    width: 95%;
+    border: 2px solid black;
+    margin: auto;
+    border-radius: 0.5rem;
+    border-collapse: collapse;
+}
+
+.thAdministrar,
+.trAdministrar,
+.tdAdministrar {
+    border: 2px solid black;
+    border-collapse: collapse;
 }

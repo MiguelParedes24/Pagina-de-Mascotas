@@ -1,5 +1,5 @@
 <?php
-//require_once('helpers/dd.php');
+
 require('controlador/funciones.php');
 //if(ingresarUsuario() === true){
 if (!isset($_SESSION['nombre'])) {
@@ -10,9 +10,16 @@ if (!isset($_SESSION['nombre'])) {
 
 $bd = conexion('localhost', 'mascotas', 'root', '');
 $animalitos = listar($bd, 'animalitos');
-$noticias = listar($bd, 'animalitos');
+$perdidos = true;
+$mascotasPerdidas = filtrarMascotas($animalitos, $perdidos);
+$perdidas = false;
+$mascotasEncontradas = filtrarMascotas($animalitos, $perdidas);
+
+
+
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,8 +43,57 @@ $noticias = listar($bd, 'animalitos');
     </header>
 
     <div class="contenedor contenido-principal">
+        <h1>Sección de Mascotas</h1><br>
+        <section>
+            <p>En esta sección tenemos las mascotas que fueron publicadas dentro del sitio. Si necesitas ayuda con
+                alguna mascota <a class="enlaceAyuda" href="ayuda.php">hace click aqui.</a></p>
+        </section><br>
+        <section class="secMascotaE">
+            <table>
+                <h3 style="padding-left:20px">Mascotas Encontradas:</h3>
+                <tr>
+                    <?php foreach ($mascotasEncontradas as $key => $animalito) : ?>
+                        <td>
+                            <article class="widget-mascota">
+                                <img src="imagenes/<?= $animalito['imagen'] ?>" alt="...">
+                                <div>
+                                    <h5 class="no-margin"><?= $animalito['nombre'] ?></h5>
+                                    <p class="no-margin"><?= $animalito['descripcion'] ?></p>
+                                    <p class="no-margin"><?= $animalito['aporte'] ?></p>
+                                    <a href="detalleAnimalito.php?id=<?= $animalito['id'] ?>" class="boton boton--secundario">Ver
+                                        detalle</a>
+                                </div>
+                            </article>
+                        </td>
+                    <?php endforeach; ?>
+                </tr>
+            </table>
+        </section>
+        <br>
+        <hr>
+        <br>
 
-
+        <section class="secMascotaP">
+            <table>
+                <h3 style="padding-left:20px">Mascotas Perdidas:</h3>
+                <tr>
+                    <?php foreach ($mascotasPerdidas as $key => $animalito) : ?>
+                        <td>
+                            <article class="widget-mascota">
+                                <img src="imagenes/<?= $animalito['imagen'] ?>" alt="...">
+                                <div>
+                                    <h5 class="no-margin"><?= $animalito['nombre'] ?></h5>
+                                    <p class="no-margin"><?= $animalito['descripcion'] ?></p>
+                                    <p class="no-margin"><?= $animalito['aporte'] ?></p>
+                                    <a href="detalleAnimalito.php?id=<?= $animalito['id'] ?>" class="boton boton--secundario">Ver
+                                        detalle</a>
+                                </div>
+                            </article>
+                        </td>
+                    <?php endforeach; ?>
+                </tr>
+            </table>
+        </section>
 
     </div>
 
