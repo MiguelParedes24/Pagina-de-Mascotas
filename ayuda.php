@@ -12,6 +12,7 @@ $animalitos = listar($bd, 'animalitos');
 $noticias = listar($bd, 'animalitos');
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,16 +29,29 @@ $noticias = listar($bd, 'animalitos');
     <script type="text/javascript" src="js/master.js"></script>
 </head>
 
-<body>
+<body onload="armoFormulario();">
     <header class="header">
         <?php
         require_once("partials/navegacion.php");
         ?>
     </header>
 
-    <div class="contenedor">
+    <div class="contenedor-form">
+
         <h3 style="text-align:center">¿Necesitás Ayuda? Completa el siguiente formulario</h3>
-          <!-- aca va el formulario inyectado con javascript-->
+        <!-- aca va el formulario inyectado con javascript-->
+
+    
+        <?php
+        echo "<pre>";
+        print_r($_POST);
+        echo "</pre>";
+        if (isset($_POST['Animal Encontrado']) && $_POST['animalitoEncontrado'] == 'Animal Encontrado') {
+            require_once("partials/formularioEncontrado.php");
+        } else if(isset($_POST['Animal Perdido']) && $_POST['animalitoPerdido'] == 'Animal Perdido') {
+            require_once("partials/formularioPerdido.php");
+        }
+        ?>
     </div>
 
 
