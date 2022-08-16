@@ -25,6 +25,7 @@ $noticias = listar($bd, 'animalitos');
 
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" crossorigin="crossorigin" as="font">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="js/master.js"></script>
 </head>
 
 <body>
@@ -36,25 +37,7 @@ $noticias = listar($bd, 'animalitos');
 
     <div class="contenedor">
         <h3 style="text-align:center">¿Necesitás Ayuda? Completa el siguiente formulario</h3>
-
-        <form action="Post" class="form-login">
-            <label class="label-form" for="nombre">Nombre de la Mascota</label><br>
-
-            <input class="input-form" type="text" name="nombre" id="nombre"><br>
-
-            <label class="label-form" for="descripcion">Descripcion</label><br>
-
-            <textarea class="campo__field--textarea" name="descripcion" id="descripcion" cols="50" rows="10"></textarea><br>
-
-            <label for="contacto">Telefono de Contacto (Opcional)</label>
-            <input class="input-form" type="text" name="telefono" id="contacto">
-
-            <label class="label-form" for="imagen">Foto del Animal</label><br>
-            <input type="file" name="imagen" id="imagen">
-
-            <button type="submit" class="boton boton--primario boton-formu">Enviar</button>
-        </form>
-
+          <!-- aca va el formulario inyectado con javascript-->
     </div>
 
 
